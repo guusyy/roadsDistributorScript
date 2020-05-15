@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Bloembollenstratenverdeler</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row my-5">
+        <h1>Bloembolstratenverdeler</h1>
+    </div>
+    <div class="row my-5">
+        <div class="loader"></div>  
+    </div>
+</div>
+<div class="container-fluid">
+    <h2>Converted data:</h2>
+        <nav><a href="{{ url_for('formulierenPDF', data=data) }}">Get as PDF</a></nav>
+        <table class="table">
+            <tr>
+                <th>Full Name</th>
+                <th>Address</th>
+                <th>Age in Days</th>
+                <th>Group</th>
+                <th>Assigned Street</th>
+            </tr>
+            {% for kid in data %}
+                <tr>
+                    <td>{{kid.fullName}}</td>
+                    <td>{{kid.address}}</td>
+                    <td>{{kid.ageInDays}}</td>
+                    <td>{{kid.group}}</td>
+                    <td>{{kid.assignedStreet}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+</div>
+{% endblock %}

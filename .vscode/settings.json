@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "/Users/gdnoij/Dropbox/Zakelijk/playground/python/bloembollenverdeler/StratenverdelerApp/bin/python3.8",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.mypyEnabled": false,
+    "git.ignoreLimitWarning": true
+}

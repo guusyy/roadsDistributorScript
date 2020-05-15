@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Bloembollenstratenverdeler</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row my-5">
+        <h1>Bloembolstratenverdeler</h1>
+    </div>
+    <div class="form-row mt-3">
+        <label>Upload het meest up to date leden bestand gedownload van PION:</label>
+        <div class="custom-file" id="uploadButton">
+            <form action="" method=post enctype=multipart/form-data>
+                <input type=file name=file>
+                <input type=submit value=Upload  class="btn btn-primary">
+            </form>
+        </div>
+        {% if errorSignal == "wrongFormat" %}
+            <div class="alert alert-danger my-3" role="alert">
+            Something went wrong... <br> <b>You can only upload CSV files</b>
+            </div>
+        {% endif %}
+        {% if errorSignal == "fileTooLarge" %}
+            <div class="alert alert-danger my-3" role="alert">
+            Something went wrong... <br> <b>Your file is probably larger than the limit of: 2MB</b>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

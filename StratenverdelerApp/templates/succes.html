@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Bloembollenstratenverdeler</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row my-5">
+        <h1>Bloembolstratenverdeler</h1>
+    </div>
+    <div class="form-row mt-3">
+        <div class="alert alert-success" role="alert">
+            Gelukt, may the force be with you.
+            <img src="https://emojis.slackmojis.com/emojis/images/1576133832/7296/babyyoda.png?1576133832" height="50px" width="50px">
+        </div>
+    </div>
+    <form action="/runCalculation" method="post">
+        <div class="form-row my-5" id="mainForm">
+            <div class="col">
+                <label for="exampleFormControlInput1">Voornaam Kolom Nummer</label>
+                <input type="number" name=voornaamClm type="text" class="form-control" value="0" placeholder="Voornaam Kolom Nummer" id="InputField1">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput1">Tussennaam Kolom Nummer</label>
+                <input type="number" name=tussennaamClm type="text" class="form-control" value="1" placeholder="Tussennaam Kolom Nummer">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput1">Achternaam Kolom Nummer</label>
+                <input type="number" name=achternaamClm type="text" class="form-control" value="2" placeholder="Achternaam Kolom Nummer">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput1">Geboortedatum Kolom Nummer</label>
+                <input type="number" name=geboortedatumClm type="text" class="form-control" value="4" placeholder="Geboortedatum Kolom Nummer">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput1">Groep Kolom Nummer</label>
+                <input type="number" name=groepClm type="text" class="form-control" value="5" placeholder="Groep Kolom Nummer">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput1">Straatnaam Kolom Nummer</label>
+                <input type="number" name=straatClm type="text" class="form-control" value="6" placeholder="Straatnaam Kolom Nummer">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput1">Huisnummer Kolom Nummer</label>
+                <input type="number" name=huisnummerClm type="text" class="form-control" value="7" placeholder="Huisnummer Kolom Nummer">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput1">Postcode Kolom Nummer</label>
+                <input type="number" name=postcodeClm type="text" class="form-control" value="8" placeholder="Postcode Kolom Nummer">
+            </div>
+            <div class="col">
+                <label for="exampleFormControlInput1">Dorp/stad Kolom Nummer</label>
+                <input type="number" name=dorpClm type="text" class="form-control" value="9" placeholder="Dorp/stad Kolom Nummer">
+            </div>
+            <div class="col" >
+                <input type="submit" value="Run everything" class='btn btn-primary' id="runEveryThing">
+            </div>
+        </div>
+    </form>
+    <div class="row my-5">
+        <div class="loader"></div>  
+    </div>
+</div>
+<div class="container-fluid">
+    <h2>Your uploaded CSV data:</h2>
+        <table class="table">
+            <tr>
+                {% for element in data[0] %}
+                <th class={{loop.index - 1}}>
+                    {{loop.index - 1}}
+                </th>
+                {% endfor %}
+            </tr>
+            {% for row in data %}
+                <tr>
+                    {% for cell in row %}
+                        <td class={{loop.index - 1}}>{{cell}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+</div>
+<script type=text/javascript>
+        $('.loader').hide();
+        $('#runEveryThing').click(function(){
+            $('.loader').show();
+            $('#mainForm').hide();
+        });
+
+</script>
+{% endblock %}
