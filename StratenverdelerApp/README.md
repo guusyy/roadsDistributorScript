@@ -21,7 +21,7 @@ Phase 3
     [] Er worden automatisch pdf formulieren gemaakt voor de kinderen
 
 Phase 4
-    [] Een webapplicatie van maken op de jn site
+    [V] Een webapplicatie van maken
     [] De applicatie staat verschillende soorten input toe (csv bestand, white/blacklisting van straten, fanatieke kinderen, output source van formulieren en eventuele andere dingen voor het formulier)
     [] Er kan een lijst van fanatieke kinderen gemaakt worden die meerdere straten krijgen toegewezen
 
@@ -30,10 +30,6 @@ Phase 5
 
 Phase 6 - optimization
     [] Calculate a total cost of walking and make sure the calculations make the lowest cost total
-
-Open vragen?
-
-    - kan ik data opslaan in een database
 
 Sources:
 https://towardsdatascience.com/retrieving-openstreetmap-data-in-python-1777a4be45bb
